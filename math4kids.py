@@ -2,10 +2,13 @@ from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 
 def generate_expression_response(generate_expression, request):
     num_expressions = int(request.args.get('num_expressions'))
+    btn_text = request.args.get('btn_text')
+    btn_text = btn_text if btn_text else ''
     exps = []
     for i in range(num_expressions):
         while True:
@@ -15,7 +18,7 @@ def generate_expression_response(generate_expression, request):
                 break
 
     # print(exps)
-    return render_template('expressions.html', exps=exps)
+    return render_template('expressions.html', exps=exps, title=btn_text)
 
 
 @app.route('/')
@@ -27,6 +30,7 @@ def hello():
 def twodigtisplus1digitcarry():
     from math_exp_generator.twodigitsplus1digitcarry import generate_expression
     return generate_expression_response(generate_expression, request)
+    # return '你好，徐逸航'
 
 @app.route('/calculateunder20')
 def calculateunder20():
@@ -56,4 +60,9 @@ def plusunder20():
 @app.route('/minusunder20')
 def minusunder20():
     from math_exp_generator.minusunder20 import generate_expression
+    return generate_expression_response(generate_expression, request)
+
+@app.route('/calculatetens')
+def calculatetens():
+    from math_exp_generator.calculatetens import generate_expression
     return generate_expression_response(generate_expression, request)

@@ -21,19 +21,20 @@
 
     <h3>一年级上</h3>
     <div>
-        <button class="btn btn-outline-primary" type="button" onclick="plusunder10()">10以内加法</button>
-        <button class="btn btn-outline-primary" type="button" onclick="minusunder10()">10以内减法</button>
-        <button class="btn btn-outline-primary" type="button" onclick="calculateunder10()">10以内加减法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="plusunder10(this)">10以内加法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="minusunder10(this)">10以内减法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="calculateunder10(this)">10以内加减法</button>
     </div>
     <p></p>
     <div>
-        <button class="btn btn-outline-primary" type="button" onclick="plusunder20()">20以内加法</button>
-        <button class="btn btn-outline-primary" type="button" onclick="minusunder20()">20以内减法</button>
-        <button class="btn btn-outline-primary" type="button" onclick="calculateunder20()">20以内加减法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="plusunder20(this)">20以内加法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="minusunder20(this)">20以内减法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="calculateunder20(this)">20以内加减法</button>
     </div>
     <h3>一年级下</h3>
     <div>
-        <button class="btn btn-outline-primary" type="button" onclick="twodigitsplus1digitcarry()">2位数加1位数进位加法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="calculatetens(this)">整十数加减整十数</button>
+        <button class="btn btn-outline-primary" type="button" onclick="twodigitsplus1digitcarry(this)">2位数加1位数（进位）</button>
     </div>
 </div>
 <!-- <form onsubmit="twodigitsplus1digitcarry()">
@@ -41,47 +42,52 @@
 </form> -->
 
 <script type="text/javascript">
-    function open_expression_window(url){
+    function open_expression_window(url, btn_text){
         num_expressions = document.getElementById('num-expressions').value
-        url += '?num_expressions='+num_expressions
+        url += '?num_expressions='+num_expressions+'&btn_text='+btn_text
         win_print = window.open(url, '_blank')
         win_print.focus()
         win_print.print()
     }
 
-    function twodigitsplus1digitcarry(){
+    function twodigitsplus1digitcarry(obj){
         url = '/twodigitsplus1digitcarry'
-        open_expression_window(url)
+        open_expression_window(url, obj.innerText)
     }
     
-    function calculateunder20(){
+    function calculateunder20(obj){
         url = '/calculateunder20'
-        open_expression_window(url)
+        open_expression_window(url, obj.innerText)
     }
     
-    function plusunder10(){
+    function plusunder10(obj){
         url = '/plusunder10'
-        open_expression_window(url)
+        open_expression_window(url, obj.innerText)
     }
 
-    function minusunder10(){
+    function minusunder10(obj){
         url = '/minusunder10'
-        open_expression_window(url)
+        open_expression_window(url, obj.innerText)
     }
 
-    function calculateunder10(){
+    function calculateunder10(obj){
         url = '/calculateunder10'
-        open_expression_window(url)
+        open_expression_window(url, obj.innerText)
     }
     
-    function plusunder20(){
+    function plusunder20(obj){
         url = '/plusunder20'
-        open_expression_window(url)
+        open_expression_window(url, obj.innerText)
     }
 
-    function minusunder20(){
+    function minusunder20(obj){
         url = '/minusunder20'
-        open_expression_window(url)
+        open_expression_window(url, obj.innerText)
+    }
+
+    function calculatetens(obj){
+        url = '/calculatetens'
+        open_expression_window(url, obj.innerText)
     }
 </script>
 <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js"></script>

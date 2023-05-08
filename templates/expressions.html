@@ -4,6 +4,9 @@
     <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <div class="container">
+    <div class="row">
+        <h1 class="text-center">{{ title }}</h1>
+    </div>
 {% for exp in exps %}
 {% if loop.index0 % 3 == 0 %}
 {% if loop.index0 != 0 %}
