@@ -24,7 +24,7 @@ def generate_expression():
     if ans > 10 or ans < 0:
         return None
     else:
-        return f'{a:>2}{sign}{b:<2}='
+        return f'{a}{sign}{b}='
 
 
 if __name__ == '__main__':

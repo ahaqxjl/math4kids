@@ -13,7 +13,7 @@ def generate_expression():
     if ans < 0:
         return None
     else:
-        return f'{a}-{b}='
+        return f'{a:>2}-{b:>2}='
 
 
 if __name__ == '__main__':

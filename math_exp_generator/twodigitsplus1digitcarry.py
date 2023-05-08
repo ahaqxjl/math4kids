@@ -17,7 +17,7 @@ def generate_expression():
     elif a % 10 + b < 10:
         return None
     else:
-        exp = choice([f'{a}+{b:<2}=', f'{b:>2}+{a}='])
+        exp = choice([f'{a}+{b:>2}=', f'{b:>2}+{a}='])
         return exp
 
 
