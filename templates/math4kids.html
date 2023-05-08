@@ -1,27 +1,39 @@
 <!doctype html>
-<title>一年级数学题出题神器</title>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>一年级数学题出题神器</title>
+</head>
 
-<h1>一年级数学题出题神器</h1>
-请输入题目数量：<input id="num-expressions" value="45"></input>
+<div class="container">
+    <h1>一年级数学题出题神器</h1>
+    <div class='mb-3 row'>
+        <div class="col-auto">
+            <label for="num-expressions" class="col-form-label">请输入题目数量</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="num-expressions" value="45"></input>
+        </div>
+    </div>
 
-<br/>
-<br/>
+    <br/>
+    <br/>
 
-<h3>一年级上</h3>
-<div>
-    <button type="button" onclick="plusunder10()">10以内加法</button>
-    <button type="button" onclick="minusunder10()">10以内减法</button>
-    <button type="button" onclick="calculateunder10()">10以内加减法</button>
-</div>
-<p></p>
-<div>
-    <button type="button" onclick="plusunder20()">20以内加法</button>
-    <button type="button" onclick="minusunder20()">20以内减法</button>
-    <button type="button" onclick="calculateunder20()">20以内加减法</button>
-</div>
-<h3>一年级下</h3>
-<div>
-    <button type="button" onclick="twodigitsplus1digitcarry()">2位数加1位数进位加法</button>
+    <h3>一年级上</h3>
+    <div>
+        <button class="btn btn-outline-primary" type="button" onclick="plusunder10()">10以内加法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="minusunder10()">10以内减法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="calculateunder10()">10以内加减法</button>
+    </div>
+    <p></p>
+    <div>
+        <button class="btn btn-outline-primary" type="button" onclick="plusunder20()">20以内加法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="minusunder20()">20以内减法</button>
+        <button class="btn btn-outline-primary" type="button" onclick="calculateunder20()">20以内加减法</button>
+    </div>
+    <h3>一年级下</h3>
+    <div>
+        <button class="btn btn-outline-primary" type="button" onclick="twodigitsplus1digitcarry()">2位数加1位数进位加法</button>
+    </div>
 </div>
 <!-- <form onsubmit="twodigitsplus1digitcarry()">
     <input type="submit" value="2位数加1位数进位加法" />
@@ -71,6 +83,7 @@
         open_expression_window(url)
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <!-- <div>
 <button type="button">2位数加1位数进位加法</button>
 </div> -->
